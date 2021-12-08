@@ -83,14 +83,13 @@ const baiduSpa = getBaiduSpa();
 const base = "/";
 
 const nav = [
-  { text: "Leetcode", link: "/leetcode/" },
   {
     text: "数据结构",
     link: "/algorithm/",
   },
-  { text: "React", link: "https://react.qdzhou.cn" },
-  { text: "QA", link: "https://qa.qdzhou.cn" },
-  { text: "Home", link: "https://qa.qdzhou.cn" },
+  { text: "Leetcode", link: "/leetcode/" },
+  { text: "算法题", link: "/leetcode-summary/" },
+  { text: "Home", link: "https://link.qdzhou.cn" },
 ];
 
 module.exports = {
@@ -123,9 +122,22 @@ module.exports = {
         updatePopup: true,
       },
     ],
+    [
+      "vuepress-plugin-right-anchor",
+      {
+        showDepth: 3,
+        ignore: ["/", "/api/"],
+        expand: {
+          trigger: "click",
+          clickModeDefaultOpen: true,
+        },
+        customClass: "your-customClass",
+        disableGlobalUI: false,
+      },
+    ],
   ],
   themeConfig: {
-    sidebarDepth: 2,
+    sidebarDepth: 0,
     searchMaxSuggestions: 10,
     lastUpdated: "上次更新",
     editLinks: true,
